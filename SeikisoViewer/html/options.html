@@ -1,0 +1,413 @@
+﻿<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/options.js"></script>
+  </head>
+  <style type="text/css">
+  	b {
+  		font-size:16px;
+  	}
+  	td {
+  		margi-top: 6px;
+  		padding-bottom: 6px;
+  	}
+  	th {
+  		width:160px;
+  		text-align:left;
+  		padding-left: 10px;
+  	}
+  </style>
+  <body style="min-width:400px;">
+  	<div style="padding-right:5px;">
+  	<table style="font-size:12px;">
+	  	<tr>
+		  	<td colspan="3">
+		    <b>YouTubeプレイヤー設定</b>
+		  	</td>
+		  	<td>
+		  	</td>
+	  	</tr>
+	  	<tr>
+		  	<th colspan="2">
+		    自動倍速間隔（分）：
+		  	</th>
+		  	<td>
+		    <input id="goLiveInterval" type="number" min="0" style="width:100px;" title="ラグ解消のために再生速度を上げる間隔を指定します（0で無効）">
+		  	</td>
+	  	</tr>
+	  	<tr>
+		  	<th colspan="2">
+		    自動倍速レート：
+		  	</th>
+		  	<td>
+			<input id="goLiveRate1" name="goLiveRate" type="radio" value="1.25" style=""><label for="goLiveRate1" title="">1.25</label>
+			&nbsp;&nbsp;
+		    <input id="goLiveRate2" name="goLiveRate" type="radio" value="1.5" style=""><label for="goLiveRate2" title="">1.5</label>
+			&nbsp;&nbsp;
+		    <input id="goLiveRate3" name="goLiveRate" type="radio" value="2.0" style=""><label for="goLiveRate3" title="">2.0</label>
+		  	</td>
+	  	</tr>
+	  	<!--
+	  	<tr>
+		  	<td>
+		    動画サイズ変更タイプ：
+		  	</td>
+		  	<td>
+		    <input id="videoSizeChangeType1" name="videoSizeChangeType" type="radio" value="0" style=""><label for="videoSizeChangeType1" title="シアターモード・全画面表示による変更">通常</label>
+			&nbsp;&nbsp;
+		    <input id="videoSizeChangeType2" name="videoSizeChangeType" type="radio" value="1" style=""><label for="videoSizeChangeType2" title="ドラッグによる変更（シアターモード・全画面表示による変更不可）">可変</label>
+		  	</td>
+	  	</tr>
+	  	-->
+	  	<tr>
+		  	<th rowspan=2>
+		    コメント入力欄位置：
+		  	</th>
+		  	<td colspan="2" style="padding-left:4px;">
+			<input id="commentInputPosition1" name="commentInputPosition" type="radio" value="0" style="">
+			<label for="commentInputPosition1" title="">通常</label>
+			</td>
+		</tr>
+		<tr>
+            <td colspan="2" style="padding-left:4px;">
+                <!--
+                <input id="commentInputPosition2" name="commentInputPosition" type="radio" value="1" style="">
+                <label for="commentInputPosition2" title="">動画下</label>
+                &nbsp;&nbsp;
+                -->
+                <input id="commentInputPosition3" name="commentInputPosition" type="radio" value="2" style="">
+                <label for="commentInputPosition3" title="">動画内</label>
+            </td>
+		</tr>
+	  	<tr>
+		  	<td>
+		  	</td>
+		</tr>
+	  	<tr>
+		  	<th colspan="2">
+		    <span title="コメント入力欄位置が「動画内」の場合のみ有効">コメント入力欄透明度：</span>
+		  	</th>
+		  	<td>
+		    <input id="commentInputOpacity" type="number" min="0.1" max="1.0" step="0.1" style="width:100px;" title="コメント入力欄位置が「動画内」の場合のみ有効">
+		  	</td>
+		</tr>
+  	</table>
+  	<br>
+  	<br>
+  	<table style="font-size:12px;">
+	  	<tr>
+		  	<td colspan="2">
+		    <b>コメント欄設定</b>
+		  	</td>
+		  	<td>
+		  	</td>
+	  	</tr>
+		<!--
+	  	<tr>
+		  	<td>
+		    コメント欄フォントサイズ：
+		  	</td>
+		  	<td>
+		    <input id="fontsize" type="number" min="10" max="30" style="width:100px;" title="">
+		  	</td>
+	  	</tr>
+	  	<tr>
+		  	<td>
+		    コメント欄フォントカラー：
+		  	</td>
+		  	<td>
+		    <input id="fontcolor" type="color" style="width:100px;" title="">
+		  	</td>
+	  	</tr>
+		-->
+	  	<tr>
+		  	<th rowspan=3 colspan="2">
+		    コメント欄スタイル：
+		  	</th>
+            <td>
+                <input id="commentStyle1" name="commentStyle" type="radio" value="0" style=""><label for="commentStyle1" title="">ストライプ</label>
+
+            <!--
+                &nbsp;&nbsp;
+                <input id="commentStyle2" name="commentStyle" type="radio" value="1" style=""><label for="commentStyle2" title="">コメビュ風</label>
+            -->
+            </td>
+		</tr>
+		<tr>
+			<td>
+				<input id="commentStyle9" name="commentStyle" type="radio" value="9" style=""><label for="commentStyle9" title="">変更しない</label>
+		  	</td>
+		</tr>
+	  	<tr>
+		  	<td>
+		  	</td>
+		</tr>
+	  	<tr>
+		  	<th colspan="2">
+		    一行で表示する：
+		  	</th>
+		  	<td>
+		    <input id="commentNoWrap" type="checkbox" title="長いコメントを折り返さずに1行で表示します">
+		  	</td>
+	  	</tr>
+		<!--
+	  	<tr>
+		  	<td>
+		    <input id="commentStyle2" name="commentStyle" type="radio" value="1" style=""><label for="commentStyle2" title="">コメビュ風</label>
+		  	</td>
+		</tr>
+		-->
+  	</table>
+  	<br>
+  	<br>
+    <table style="font-size:12px;">
+        <tr>
+            <td colspan="3">
+                <b>コメント表示動作設定</b>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                最大コメント表示行数：
+            </th>
+            <td>
+                <input id="maxLine" type="number" min="0" style="width:100px;" title="0で自動判別">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                コメント透過しきい値：
+            </th>
+            <td>
+                <input id="rushCriteria" type="number" min="0.0" step="0.1" style="width:100px;" title="最大コメント表示行数×しきい値以上でコメントを透過します">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                コメント透過透明度：
+            </th>
+            <td>
+                <input id="rushOpacity" type="number" min="0.1" max="1" step="0.05" style="width:100px;" title="0に近いほど薄くなります">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                コメント表示時間(ミリ秒)：
+            </th>
+            <td>
+                <input id="commentLifeTime" type="number" min="1000" max="10000" step="100" style="width:100px;">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                最大同時コメント表示数：
+            </th>
+            <td>
+                <input id="commentParallelCount" type="number" min="1" step="1" style="width:100px;">
+            </td>
+        </tr>
+        <tr>
+            <th rowspan=2 colspan="2">
+                コメント表示数超過時動作：
+            </th>
+            <td>
+                <input id="limitOver1" name="limitOver" type="radio" value="1" style=""><label for="limitOver1" title="超過分のコメント表示処理をスキップします">超過したコメントを非表示</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="limitOver2" name="limitOver" type="radio" value="0" style=""><label for="limitOver2" title="表示時間の長いものから順に超過分のコメントを削除します">古いコメントを非表示</label>
+            </td>
+        </tr>
+        <tr style="display:none;">
+            <th colspan="2">
+                NG理由ダイアログ表示：
+            </th>
+            <td>
+                <input id="showNgReasonDialog" type="checkbox" checked="checked" title="NG追加時にNG理由を入力するダイアログを表示します">
+            </td>
+        </tr>
+        <tr style="display:none;">
+            <th colspan="2">
+                NG追加種別：
+            </th>
+            <td>
+                <input id="addNgKind1" name="addNgKind" type="radio" value="0" style="">
+                <label for="addNgKind1" title="">選択</label>
+                &nbsp;&nbsp;
+                <input id="addNgKind2" name="addNgKind" type="radio" value="1" style="">
+                <label for="addNgKind2" title="">通常NG</label>
+                &nbsp;&nbsp;
+                <input id="addNgKind3" name="addNgKind" type="radio" value="2" style="">
+                <label for="addNgKind3" title="">透明NG</label>
+            </td>
+        </tr>
+        <tr style="display:none;">
+            <th colspan="2">
+                共有NGしきい値：
+            </th>
+            <td>
+                <input id="ngShareLevel" type="number" min="0" step="1" style="width:100px;" title="指定人数からNGされているユーザのコメントを自動で非表示にします（0で無効）">
+            </td>
+        </tr>
+        <tr id="cssLinkTr" class="cssLinkTr" style="display:none;">
+            <th colspan="2">
+                CSS Link指定：
+                </td>
+            <td id="cssLinkTd">
+                <input type="text" id="cssLink" style="width:170px;" title='読み込む外部CSSを指定してください（例）<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" />'>
+                <br>
+                <!--（例）&lt;link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet" /&gt; -->
+            </td>
+        </tr>
+        <tr id="fontTr" class="fontTr" style="display:none;">
+            <th colspan="2">
+                フォント指定：
+            </th>
+            <td id="fontTd">
+                <input type="text" id="commentFont" style="width:170px;" title='コメントのフォントを指定してください（例）"Nico Moji"'>
+                &nbsp;
+                <img class="list" src="../images/list.png" title="リストから選択" style="width:12px; cursor: pointer;">
+                <br>
+                <!--（例）"Nico Moji" -->
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input id="reset" type="button" value="設定をリセット">
+    <br>
+    <br>
+    <br>
+  	<table style="font-size:12px; table-layout: fixed; width:320px; display:none;">
+	  	<tr>
+		  	<td>
+		  	<b>名前NG設定</b>
+		  	</td>
+	  	</tr>
+	</table>
+  	<table style="font-size:12px; table-layout: fixed; width:320px; display:none;">
+	  	<tr>
+		  	<td style="width:20px;">
+		  	</td>
+		  	<td style="width:100px;">
+		    名前
+		  	</td>
+		  	<td>
+		    透明NG
+		  	</td>
+		  	<td>
+		    理由
+		  	</td>
+	  	</tr>
+	</table>
+    <div id="ngInfoDiv" style="overflow-y:scroll; height:200px; display:none;">
+    	<form>
+	  	<table style="font-size:12px; table-layout: fixed; width:320px;">
+		  	<tr id="ngInfoTr" class="ngInfoTr" style="display:none;">
+			  	<td style="width:20px;">
+			  		<img class="remove" src="../images/remove.png"  title="NGを解除" style="cursor: pointer;">
+			  	</td>
+			  	<td id="ngInfoName" style="width:100px;">
+			  	</td>
+			  	<td id="ngInfoTransparent" style="width:30px;">
+			  		&nbsp;&nbsp;&nbsp;&nbsp;<input id="ngInfoTransparentCheck" type="checkbox" checked="checked">
+			  	</td>
+			  	<td id="ngInfoReason" style="padding-left:20px;">
+			  		<input type="text" id="ngInfoReasonText" style="width:110px;">
+			  		&nbsp;
+			  		<img class="list" src="../images/list.png"  title="リストから選択" style="width:12px; cursor: pointer;">
+			  	</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+    <br>
+  	<table style="font-size:12px; table-layout: fixed; width:320px; display:none;">
+	  	<tr>
+		  	<td>
+		  	<b>コメントNG設定</b>
+		  	</td>
+	  	</tr>
+	</table>
+  	<table style="font-size:12px; table-layout: fixed; width:320px; display:none;">
+	  	<tr>
+		  	<td style="width:20px;">
+		  	</td>
+		  	<td style="width:140px;">
+		    正規表現
+		  	</td>
+		  	<td>
+		    透明NG
+		  	</td>
+		  	<td>
+		    備考
+		  	</td>
+	  	</tr>
+	</table>
+    <div id="ngInfoDiv2" style="overflow-y:scroll; height:200px; display:none;">
+    	<form>
+	  	<table style="font-size:12px; table-layout: fixed; width:320px;">
+		  	<tr id="ngInfoTr2" class="ngInfoTr2" style="display:none;">
+			  	<td style="width:20px;">
+			  		<img class="remove2" src="../images/remove.png"  title="NG設定を解除" style="cursor: pointer;">
+			  	</td>
+			  	<td id="ngInfoRegex" style="width:140px;">
+			  		/<input type="text" id="ngInfoRegexText" style="width:110px;">/
+			  	</td>
+			  	<td id="ngInfoTransparent" style="width:30px;">
+			  		&nbsp;&nbsp;&nbsp;&nbsp;<input id="ngInfoTransparentCheck" type="checkbox" checked="checked">
+			  	</td>
+			  	<td id="ngInfoText" style="padding-left:20px;">
+			  		<input type="text" id="ngInfoTextText" style="width:110px;" title="どの正規表現によってNGとなったか判別するためのラベルとして使用されます。（非透明NG時）">
+			  	</td>
+			</tr>
+		  	<tr id="ngInfoTr3" class="ngInfoTr3" style="">
+			  	<td style="width:20px;">
+			  		<img class="append" src="../images/append.png"  title="NG設定を追加" style="cursor: pointer;">
+			  	</td>
+			  	<td id="ngInfoRegex" style="width:100px;">
+			  	</td>
+			  	<td id="ngInfoTransparent" style="width:30px;">
+			  	</td>
+			  	<td id="ngInfoText" style="padding-left:20px;">
+			  	</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+    <br>
+    <input id="resetNg" type="button" value="NG情報をリセット" style="display:none;">
+    <br>
+    <br>
+    <br>
+  	<table style="font-size:12px; display:none;">
+	  	<tr>
+		  	<td colspan="2">
+		    <b>認証キー&nbsp;&nbsp;</b><img src="../images/uncheck.png" id="authorized" style="">
+		  		</td>
+		  	<td>
+		  	</td>
+	  	</tr>
+	  	<tr>
+		  	<td>
+		    <input type="password" id="key" style="width:350px;">
+		  	</td>
+		  	<td>
+		    </td>
+		</tr>
+	  	<tr>
+		  	<td>
+		    <input id="auth" type="button" value="認証">&nbsp;&nbsp;&nbsp;
+		    <span id="authStatus"></span>
+		    </td>
+		  	<td>
+		    </td>
+		</tr>
+  	</table>
+
+    <input id="save" type="button" value="保存">&nbsp;&nbsp;&nbsp;<span id="saved" style="display:none;">保存が完了しました</span>
+	</div>
+  </body>
+</html>
