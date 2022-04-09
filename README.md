@@ -8,3 +8,7 @@ if you use this, you must thank [なかむーら](https://com.nicovideo.jp/commu
 1. Open `chrome://extensions/`
 2. Select load unpacked
 3. Choose this repo's source
+
+# Changes
+- move settingOption popup
+- add reload chat iframe buttton
