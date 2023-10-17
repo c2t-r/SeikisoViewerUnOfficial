@@ -810,8 +810,8 @@ YOUTUBE = {
             });
             
             // 設定保存イベント
-            $('#save', doc).unbind();
-            $('#save', doc).click(function () {
+            $('img#save', doc).unbind();
+            $('img#save', doc).click(function () {
                 //log('checked : '+$('#autoReload').prop('checked'));
                 localStorage.setItem('displayIcon', $('#displayIcon', doc).prop('checked'));
                 localStorage.setItem('displayName', $('#displayName', doc).prop('checked'));
@@ -847,7 +847,7 @@ YOUTUBE = {
 
                 $('#puzzle', doc).attr("src", chrome.extension.getURL("images/" + puzzleIcon));
                 $('#setting', doc).attr("src", chrome.extension.getURL("images/" + settingIcon));
-                $('#save', doc).attr("src", chrome.extension.getURL("images/" + saveIcon));
+                $('img#save', doc).attr("src", chrome.extension.getURL("images/" + saveIcon));
                 $('#default', doc).attr("src", chrome.extension.getURL("images/" + defaultIcon));
 
                 var fontsize = (null == options || null == options.fontsize) ? 12 : options.fontsize;
@@ -1890,7 +1890,7 @@ YOUTUBE = {
                     } else {
                         $('.video-stream').before('<div class="commentDiv" id="commentDiv" style="position: absolute; z-index: 999; height:' + height + 'px; width:' + width + 'px;" ></div>');
                         document.getElementById('commentDiv').style.display = 'none';
-                        $('.video-stream').before('<canvas class="commentDiv3" id="commentDiv3" width=' + width * 2 + ' height=' + height * 2 + ' style="font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,\\30E1\30A4\30EA\30AA,sans-serif; -webkit-font-smoothing: subpixel-antialiased; position: absolute; z-index: 999; height:' + height + 'px; width:' + width + 'px; text-shadow: #999 0.1px 0.1px 1px; border:0;" ></canvas>');
+                        $('.video-stream').before('<canvas class="commentDiv3" id="commentDiv3" width=' + width * 2 + ' height=' + height * 2 + ' style="font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic ProN,Meiryo,\\30E1\\30A4\\30EA\\30AA,sans-serif; -webkit-font-smoothing: subpixel-antialiased; position: absolute; z-index: 999; height:' + height + 'px; width:' + width + 'px; text-shadow: #999 0.1px 0.1px 1px; border:0;" ></canvas>');
                         //$('#player-api').prepend('<canvas class="puzzleCanvas" id="puzzleCanvas" style="-webkit-font-smoothing: antialiased;position: absolute; z-index: 999; height:' + height + 'px; width:' + width + 'px; text-shadow: #999 0.1px 0.1px 1px;" ></canvas>');
                         //loadImage('https://i.ytimg.com/vi/uy6T4zBhrbk/hqdefault_live.jpg?sqp=CKj0hdEF-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCJ2l4yaLesaNRpqA7YlNaqobHj_A');
                         //shuffle();
@@ -2310,9 +2310,9 @@ YOUTUBE = {
             $('#optionSetting', doc).toggle();
         });
         // 設定保存イベント
-        $('#save').unbind();
-        $('#save').click(function () {
-            //log('checked : '+$('#autoReload').prop('checked'));
+        $('img#save').unbind();
+        $('img#save').click(function () {
+            log('checked : '+$('#autoReload').prop('checked'));
             localStorage.setItem('autoScroll', $('#autoScroll').prop('checked'));
             localStorage.setItem('displayPlayTime', $('#displayPlayTime').prop('checked'));
             localStorage.setItem('displayTime', $('#displayTime').prop('checked'));
@@ -2347,7 +2347,7 @@ YOUTUBE = {
             var defaultIcon = gaming || styleDark ? "defaultg.png" : "default.png";
 
             $('#setting', doc).attr("src", chrome.extension.getURL("images/" + settingIcon));
-            $('#save', doc).attr("src", chrome.extension.getURL("images/" + saveIcon));
+            $('img#save', doc).attr("src", chrome.extension.getURL("images/" + saveIcon));
             $('#default', doc).attr("src", chrome.extension.getURL("images/" + defaultIcon));
 
             var fontsize = (null == options || null == options.fontsize) ? 12 : options.fontsize;
